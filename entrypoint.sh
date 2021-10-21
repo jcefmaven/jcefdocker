@@ -3,6 +3,7 @@ set -e
 
 # Determine architecture
 MACHINE_TYPE=`uname -m`
+echo "Building for architecture $MACHINE_TYPE"
 
 git clone https://bitbucket.org/chromiumembedded/java-cef.git src
 
