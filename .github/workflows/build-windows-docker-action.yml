@@ -1,0 +1,23 @@
+name: build-windows-docker
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  docker:
+    runs-on: windows-latest
+    steps:
+      -
+        name: Login to DockerHub
+        uses: docker/login@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Build and Push
+        run: |
+          docker build --file=DockerfileWindows -t friwidev/build-windows:${{ github.sha }} .
+          docker push friwidev/build-windows:${{ github.sha }}  
+
