@@ -9,6 +9,7 @@ jobs:
   docker:
     runs-on: windows-latest
     steps:
+      - uses: actions/checkout@v1
       -
         name: Login to DockerHub
         uses: azure/docker-login@v1
