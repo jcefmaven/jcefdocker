@@ -19,6 +19,6 @@ RUN apt-get -q update && \
     apt-get -q install -y --no-install-recommends $TOOLS $LIBS
 
 #Step 4: Setup entrypoint
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+COPY entrypoint.sh /entrypoint_linux.sh
+RUN chmod +x entrypoint_linux.sh
+ENTRYPOINT ["/entrypoint_linux.sh"]
