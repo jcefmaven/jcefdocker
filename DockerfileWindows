@@ -9,22 +9,11 @@ RUN powershell -Command \
 
 RUN choco config set cachelocation C:\chococache
 
-RUN choco install \
-    cmake.install --version=3.13.1 \
-    git  \
-    jdk11 \
-    python --version=3.7.2 \
-    --confirm \
-    --limit-output \
-    --timeout 216000 \
-    && rmdir /S /Q C:\chococache
-
-RUN choco install \
-    visualstudio2015community \
-    --confirm \
-    --limit-output \
-    --timeout 216000 \
-    && rmdir /S /Q C:\chococache
+RUN choco install cmake.install --version=3.13.1 --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
+RUN choco install git --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
+RUN choco install jdk11 --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
+RUN choco install python --version=3.7.2 --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
+RUN choco install visualstudio2015community --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
 
 #Step x: Setup entrypoint
 COPY entrypoint_windows.bat /entrypoint_windows.bat
