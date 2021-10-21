@@ -28,6 +28,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           file: DockerfileLinux
-          platforms: linux/amd64,linux/i386
           push: true
           tags: friwidev/build-linux:latest
