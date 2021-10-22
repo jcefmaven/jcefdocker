@@ -30,4 +30,4 @@ jobs:
           file: DockerfileLinux
           platforms: linux/386,linux/amd64
           push: true
-          tags: friwidev/build-linux:latest
+          tags: friwidev/jcefbuild:latest
