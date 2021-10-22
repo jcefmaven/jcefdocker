@@ -19,6 +19,6 @@ jobs:
       -
         name: Build and Push
         run: |
-          docker build --file=DockerfileWindows -t friwidev/jcefbuild:latest .
-          docker push friwidev/jcefbuild:latest  
+          docker build --file=DockerfileWindows -t friwidev/jcefbuild:windows-latest .
+          docker push friwidev/jcefbuild:windows-latest  
 
