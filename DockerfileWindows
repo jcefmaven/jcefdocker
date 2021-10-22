@@ -13,7 +13,8 @@ RUN choco install cmake.install --version=3.13.1 --confirm --limit-output --time
 RUN choco install git --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
 RUN choco install openjdk11 --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
 RUN choco install python --version=3.7.2 --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
-RUN choco install microsoft-build-tools --version=14.0.25420.1 --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
+RUN choco install visualstudio2019buildtools --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
+RUN choco install visualstudio2019-workload-vctools --package-parameters "--includeRecommended" --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
 
 #Step x: Setup entrypoint
 COPY entrypoint_windows.bat /entrypoint_windows.bat
