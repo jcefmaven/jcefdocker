@@ -18,7 +18,7 @@ RUN apt-get -q update && \
 
 #Step 3: Install xcbuild: https://github.com/facebookarchive/xcbuild
 RUN git clone --depth=1 https://github.com/facebook/xcbuild && cd xcbuild &&  \
-    git submodule update --init && make && mv build/xcbuild /usr/local/bin/
+    git submodule update --init && make 'CFLAGS=-Wno-address-of-packed-member' && mv build/xcbuild /usr/local/bin/
 
 #Step 4: Setup entrypoint
 COPY entrypoint_macosx.sh /entrypoint_macosx.sh
