@@ -16,8 +16,3 @@ RUN choco install python --version=3.7.2 --confirm --limit-output --timeout 2160
 RUN choco install visualstudio2019buildtools --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
 RUN choco install visualstudio2019-workload-vctools --package-parameters "--includeRecommended" --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
 
-#Step x: Setup entrypoint
-COPY entrypoint_windows.bat /entrypoint_windows.bat
-ENTRYPOINT ["/entrypoint_windows.bat"]
-#Default argument is 64 bit
-CMD ["64"]

@@ -13,7 +13,3 @@ ENV LIBS libnss3 libnspr4 libatk-bridge2.0-0 libdrm2 libxkbcommon0 libgbm1 libas
 RUN apt-get -q update && \
     apt-get -q install -y --no-install-recommends $TOOLS $LIBS
 
-#Step 3: Setup entrypoint
-COPY entrypoint_linux.sh /entrypoint_linux.sh
-RUN chmod +x entrypoint_linux.sh
-ENTRYPOINT ["/entrypoint_linux.sh"]
