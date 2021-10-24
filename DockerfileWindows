@@ -19,4 +19,5 @@ RUN choco install visualstudio2019-workload-vctools --package-parameters "--incl
 #Step x: Setup entrypoint
 COPY entrypoint_windows.bat /entrypoint_windows.bat
 ENTRYPOINT ["/entrypoint_windows.bat"]
-
+#Default argument is 64 bit
+CMD ["64"]

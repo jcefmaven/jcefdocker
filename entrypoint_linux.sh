@@ -5,10 +5,15 @@ set -e
 MACHINE_TYPE=`uname -m`
 echo "Building for architecture $MACHINE_TYPE"
 
-git clone https://bitbucket.org/chromiumembedded/java-cef.git src
+if [ ! -f "/jcef/README.md" ]; then
+    echo "Did not find existing files to build - cloning..."
+    git clone https://bitbucket.org/chromiumembedded/java-cef.git /jcef
+else
+    echo "Found existing files to build"
+fi
 
 # Enter the JCEF source code directory.
-cd src
+cd /jcef
 
 # Create and enter the `jcef_build` directory.
 # The `jcef_build` directory name is required by other JCEF tooling
