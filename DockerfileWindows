@@ -14,6 +14,6 @@ RUN choco install ninja --confirm --limit-output --timeout 216000 && rmdir /S /Q
 RUN choco install git --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
 RUN choco install openjdk11 --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
 RUN choco install python --version=3.7.2 --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
-RUN choco install pip --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
+RUN curl https://bootstrap.pypa.io/get-pip.py && python get-pip.py
 RUN pip install --upgrade certifi
 RUN choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.VCTools --add Microsoft.VisualStudio.Component.VC.ATL --includeRecommended" --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
