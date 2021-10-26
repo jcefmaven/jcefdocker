@@ -12,6 +12,6 @@ RUN choco config set cachelocation C:\chococache
 RUN choco install cmake.install --version=3.13.1 --installargs '"ADD_CMAKE_TO_PATH=System"' --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
 RUN choco install ninja --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
 RUN choco install git --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
-RUN choco install openjdk11 --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
+RUN choco install jdk11 -params "source=false" --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
 RUN choco install python --version=3.7.2 --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
 RUN choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.VCTools --add Microsoft.VisualStudio.Component.VC.ATL --includeRecommended" --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
