@@ -6,7 +6,7 @@ on:
       - 'master'
 
 jobs:
-  docker64:
+  docker:
     runs-on: windows-2019
     steps:
       - uses: actions/checkout@v1
@@ -19,23 +19,6 @@ jobs:
       -
         name: Build and Push
         run: |
-          docker build --file=DockerfileWindows64 -t ${{ secrets.DOCKERHUB_REPOSITORY }}:windows64-latest .
-          docker push ${{ secrets.DOCKERHUB_REPOSITORY }}:windows64-latest
-
-  docker32:
-    runs-on: windows-2019
-    steps:
-      - uses: actions/checkout@v1
-      -
-        name: Login to DockerHub
-        uses: azure/docker-login@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Build and Push
-        run: |
-          docker build --file=DockerfileWindows32 -t ${{ secrets.DOCKERHUB_REPOSITORY }}:windows32-latest .
-          docker push ${{ secrets.DOCKERHUB_REPOSITORY }}:windows32-latest
-  
+          docker build --file=DockerfileWindows -t ${{ secrets.DOCKERHUB_REPOSITORY }}:windows-latest .
+          docker push ${{ secrets.DOCKERHUB_REPOSITORY }}:windows-latest
 
