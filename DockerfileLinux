@@ -4,7 +4,8 @@ FROM python:3.7-slim-bullseye
 #Required packages according to https://bitbucket.org/chromiumembedded/java-cef/wiki/BranchesAndBuilding
 #CMake, Git, a C compiler (gcc), Java, Python, build-essential, libgtk2.0-dev (sub packages), ninja (for building)
 #Additional tools for creating distribution: rsync
-ENV TOOLS openjdk-11-jdk cmake git gcc build-essential libgtk2.0-dev ninja-build rsync
+#Additional utils for scripts: curl
+ENV TOOLS openjdk-11-jdk cmake git gcc build-essential libgtk2.0-dev ninja-build rsync curl
 
 #Additional libraries for slim image
 ENV LIBS libnss3 libnspr4 libatk-bridge2.0-0 libdrm2 libxkbcommon0 libgbm1 libasound2 libatspi2.0-0 libxshmfence1
