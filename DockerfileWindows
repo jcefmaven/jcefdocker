@@ -9,7 +9,7 @@ RUN powershell -Command \
 
 RUN choco config set cachelocation C:\chococache
 
-RUN powershell -command "Start-BitsTransfer -Source https://aka.ms/download-jdk/microsoft-jdk-11-windows-aarch64.zip -Destination C:\jdk_arm64.zip"
+RUN curl -o C:\jdk_arm64.zip https://aka.ms/download-jdk/microsoft-jdk-11-windows-aarch64.zip
 RUN powershell -command "Expand-Archive C:\jdk_arm64.zip C:\"
 RUN rm C:\jdk_arm64.zip
 RUN choco install jdk8 -params "both=true" --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
