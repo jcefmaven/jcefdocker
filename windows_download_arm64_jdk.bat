@@ -9,7 +9,7 @@ curl -L -o jdk_arm64.zip https://aka.ms/download-jdk/microsoft-jdk-11-windows-aa
 
 :: Unzip using jar
 jar xf jdk_arm64.zip
-rm /f jdk_arm64.zip
+del jdk_arm64.zip
 
 FOR %%F IN (*) DO (
  set JDK_NAME=%%F
@@ -26,4 +26,4 @@ rmdir jdkdl
 
 :: Print install confirmation
 echo Successfully installed arm64 JDK to C:\jdk-11
-dir C:\jdk-11
+dir C:\jdk-11\
