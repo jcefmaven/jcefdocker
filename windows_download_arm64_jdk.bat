@@ -18,7 +18,8 @@ FOR %%F IN (*) DO (
 :cont
 
 :: Move to C:\jdk-11
-move "%JDK_NAME%" "C:\jdk-11"
+rename "%JDK_NAME%" "jdk-11"
+move "jdk-11" "C:\"
 
 :: Remove download dir
 cd ..
