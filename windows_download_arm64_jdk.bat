@@ -11,15 +11,12 @@ curl -L -o jdk_arm64.zip https://aka.ms/download-jdk/microsoft-jdk-11-windows-aa
 jar xf jdk_arm64.zip
 del jdk_arm64.zip
 
-FOR %%F IN (*) DO (
- set JDK_NAME=%%F
- goto cont
-)
-:cont
-echo Extracted %JDK_NAME%
+SET a=jdk
+for /D %%x in (%a%*) do if not defined f set "f=%%x"
+echo Extracted %f%
 
 :: Move to C:\jdk-11
-rename %JDK_NAME% jdk-11
+rename %f% jdk-11
 move jdk-11 C:\
 
 :: Remove download dir
