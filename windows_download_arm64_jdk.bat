@@ -16,10 +16,11 @@ FOR %%F IN (*) DO (
  goto cont
 )
 :cont
+echo Extracted %JDK_NAME%
 
 :: Move to C:\jdk-11
-rename "%JDK_NAME%" "jdk-11"
-move "jdk-11" "C:\"
+rename %JDK_NAME% jdk-11
+move jdk-11 C:\
 
 :: Remove download dir
 cd ..
