@@ -25,4 +25,3 @@ rmdir jdkdl
 
 :: Print install confirmation
 echo Successfully installed arm64 JDK to C:\jdk-11
-dir C:\jdk-11\
