@@ -10,8 +10,8 @@ RUN powershell -Command \
 RUN choco config set cachelocation C:\chococache
 
 RUN mkdir C:\arm64jdk
-RUN curl -o C:\arm64jdk\jdk_arm64.zip https://aka.ms/download-jdk/microsoft-jdk-11-windows-aarch64.zip
-RUN compact /u "C:\arm64jdk\jdk_arm64.zip" /i /Q
+RUN curl -L -o C:\arm64jdk\jdk_arm64.zip https://aka.ms/download-jdk/microsoft-jdk-11-windows-aarch64.zip
+RUN compact /u "C:\arm64jdk\jdk_arm64.zip" /i
 RUN del /f C:\arm64jdk\jdk_arm64.zip
 RUN choco install jdk8 -params "both=true" --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
 RUN choco install cmake.install --version=3.13.1 --installargs '"ADD_CMAKE_TO_PATH=System"' --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
