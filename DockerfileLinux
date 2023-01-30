@@ -14,4 +14,5 @@ ENV LIBS libnss3 libnspr4 libatk-bridge2.0-0 libdrm2 libxkbcommon0 libgbm1 libas
 RUN apt-get -q update && \
     apt-get -q install -y --no-install-recommends $TOOLS $LIBS
 
+#Create link to re-enable support for linux arm builds
 RUN ln -s /usr/arm-linux-gnueabihf/lib/ld-linux-armhf.so.3 /usr/lib/ld-linux-armhf.so.3
