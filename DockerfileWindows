@@ -1,5 +1,5 @@
-ARG version=ltsc2019
-FROM mcr.microsoft.com/dotnet/framework/runtime:4.8-20221213-windowsservercore-$version
+ARG version=ltsc2022
+FROM mcr.microsoft.com/dotnet/framework/runtime:4.8.1-20221213-windowsservercore-$version
 
 ENV chocolateyUseWindowsCompression false
 
@@ -16,4 +16,4 @@ RUN choco install cmake.install --version=3.13.1 --installargs '"ADD_CMAKE_TO_PA
 RUN choco install ninja --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
 RUN choco install git --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
 RUN choco install python --version=3.7.2 --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
-RUN choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.VCTools --add Microsoft.VisualStudio.Component.VC.ATL --add Microsoft.VisualStudio.Component.VC.Tools.ARM64 --includeRecommended" --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
+RUN choco install visualstudio2022buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.VCTools --add Microsoft.VisualStudio.Component.VC.ATL --add Microsoft.VisualStudio.Component.VC.Tools.ARM64 --includeRecommended" --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
