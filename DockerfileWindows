@@ -12,7 +12,7 @@ RUN choco config set cachelocation C:\chococache
 RUN choco install jdk8 -params "both=true" --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
 COPY windows_download_arm64_jdk.bat .
 RUN windows_download_arm64_jdk.bat
-RUN choco install cmake.install --version=3.13.1 --installargs '"ADD_CMAKE_TO_PATH=System"' --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
+RUN choco install cmake.install --version=3.19 --installargs '"ADD_CMAKE_TO_PATH=System"' --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
 RUN choco install ninja --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
 RUN choco install git --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
 RUN choco install python --version=3.7.2 --confirm --limit-output --timeout 216000 && rmdir /S /Q C:\chococache
