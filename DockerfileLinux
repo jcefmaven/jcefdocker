@@ -1,5 +1,5 @@
 #Step 1: Use debian with preinstalled python 3.7
-FROM python:3.7-slim-bullseye
+FROM python:3.7-slim-bookworm
 
 #Required packages according to https://bitbucket.org/chromiumembedded/java-cef/wiki/BranchesAndBuilding
 #CMake, Git, a C compiler (gcc), Java, Python, build-essential, libgtk2.0-dev (sub packages), ninja (for building)
